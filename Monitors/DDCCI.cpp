@@ -1,11 +1,8 @@
 #pragma comment(lib, "dxva2.lib")
-
-#include <physicalmonitorenumerationapi.h>
-#include <highlevelmonitorconfigurationapi.h>
-#include <Windows.h>
-#include <WinUser.h>
-#include <strsafe.h>
 #include <iostream>
+
+#include <highlevelmonitorconfigurationapi.h>
+#include <strsafe.h>
 
 #include "DDCCI.h"
 
