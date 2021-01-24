@@ -1,0 +1,7 @@
+
+#ifndef MONITORBRIGHTNESSCONTROL_DDCCI_H
+#define MONITORBRIGHTNESSCONTROL_DDCCI_H
+
+void ddcciBrightness(int brightness, HANDLE& hPhysicalMonitor);
+
+#endif //MONITORBRIGHTNESSCONTROL_DDCCI_H
