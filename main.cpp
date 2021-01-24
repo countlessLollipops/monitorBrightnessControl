@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
         std::cout << "两个参数 屏幕 亮度" << std::endl;
         if (atoi(argv[2]) >= 0 && atoi(argv[2]) <= 100) {
             if (strcmp("-desktopDisplay", argv[1]) == 0) {
+                std::cout << "调节桌面屏幕亮度" << std::endl;
                 desktopMonitor *allMonitor = new desktopMonitor();
 
                 LPPHYSICAL_MONITOR pPhysicalMonitors = allMonitor->getPhyxMonitor();
@@ -31,6 +32,7 @@ int main(int argc, char *argv[]) {
 
                 delete allMonitor;
             } else if (strcmp("-laptopDisplay", argv[1]) == 0) {
+                std::cout << "调节笔记本屏幕亮度" << std::endl;
                 set_LCD_Brightness(atoi(argv[2]));
             }
         }
@@ -39,12 +41,11 @@ int main(int argc, char *argv[]) {
         if (atoi(argv[3]) >= 0 && atoi(argv[3]) <= 100 && atoi(argv[2]) >= 0) {
             if (strcmp("-desktopDisplay", argv[1]) == 0) {
                 desktopMonitor *allMonitor = new desktopMonitor();
-                LPPHYSICAL_MONITOR  pPhysicalMonitor=allMonitor->getPhyxMonitor();
+                LPPHYSICAL_MONITOR pPhysicalMonitor = allMonitor->getPhyxMonitor();
                 HANDLE hPhysicalMonitor = pPhysicalMonitor[atoi(argv[2])].hPhysicalMonitor;
-                ddcciBrightness(atoi(argv[3]),hPhysicalMonitor);
+                ddcciBrightness(atoi(argv[3]), hPhysicalMonitor);
                 delete allMonitor;
-            }
-            else{
+            } else {
                 help();
             }
         }
