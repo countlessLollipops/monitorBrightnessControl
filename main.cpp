@@ -6,12 +6,17 @@
 
 void help() {
     std::cout << "(c) Cocoa, 2021" << std::endl;
+    std::cout << "with 2 args:" << std::endl;
     std::cout << "Usage: BrightnessCtl.exe -[type] <level>" << std::endl;
     std::cout << "\tOption:" << std::endl;
     std::cout << "\t-[type]\t{laptopDisplay, monitorDisplay}" << std::endl;
     std::cout << "\t<level>\t brightness level need to be specified" << std::endl;
-    std::cout << "\n  Error code:\n" << std::endl;
-    std::cout << "\tPass: 0;  Fail: 1" << std::endl;
+    std::cout << std::endl;
+    std::cout << "with 3 args:" << std::endl;
+    std::cout << "only for desktopDisplay" << std::endl;
+    std::cout << "Usage: BrightnessCtl.exe -desktopDisplay <num> <level>" << std::endl;
+    std::cout << std::endl;
+
     exit(0);
 }
 
@@ -34,6 +39,8 @@ int main(int argc, char *argv[]) {
             } else if (strcmp("-laptopDisplay", argv[1]) == 0) {
                 std::cout << "调节笔记本屏幕亮度" << std::endl;
                 set_LCD_Brightness(atoi(argv[2]));
+            } else {
+                help();
             }
         }
     } else if (argc == 4) {
